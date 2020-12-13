@@ -88,6 +88,7 @@ const employers = [
   "EATASS.COM",
   "Instagram",
   "Facebook",
+  "Radiburger",
 ];
 
 export default employers;

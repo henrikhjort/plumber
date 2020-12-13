@@ -45,29 +45,30 @@
 
 .nope {
   background-color:#b46d6a;
+  box-shadow: 0 2px 2px 3px #755251;
 }
 
 .nope:active {
   background-color: #9c5e5c;
+  box-shadow: 0 0 0 0 #755251;
 }
 
 .nope:hover {
-  opacity: 1;
-  box-shadow: 0 2px 2px 3px #755251;
 }
 
 
 .love {
   background-color: #46e6be;
+  box-shadow: 0 3px 2px 3px #3d9982;
 }
 
 .love:active {
   background-color: #39c4a1;
+  box-shadow: 0 0 0 0 #3d9982;
 }
 
 .love:hover {
-  opacity: 1;
-  box-shadow: 0 3px 2px 3px #3d9982;
+
 }
 
 .moving {

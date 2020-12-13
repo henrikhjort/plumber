@@ -13,9 +13,9 @@ body,
 #app > div {
   height: 100%;
   /*background-image: linear-gradient(#ffa3bb, #ffedf1);*/
-  background: linear-gradient(45deg, #ffc2c4, #a1ffe4);
+  background: linear-gradient(45deg, #f5898d, #a1ffe4);
 	background-size: 400% 400%;
-	animation: gradient 25s ease infinite;
+	animation: gradient 30s ease infinite;
   overflow: hidden;
 }
 
