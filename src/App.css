@@ -1,0 +1,77 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  opacity: 1;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.moving {
+  transition: none;
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+  cursor: grabbing;
+}
+
+.cards {
+  flex-grow: 1;
+  padding-top: 40px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 1;
+}
+
+.buttons {
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  width: 4rem;
+  height: 4rem;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.nope {
+  background-color:#b46d6a;
+}
+
+.nope:active {
+  background-color: #9c5e5c;
+}
+
+.nope:hover {
+  opacity: 1;
+  box-shadow: 0 2px 2px 3px #755251;
+}
+
+
+.love {
+  background-color: #46e6be;
+}
+
+.love:active {
+  background-color: #39c4a1;
+}
+
+.love:hover {
+  opacity: 1;
+  box-shadow: 0 3px 2px 3px #3d9982;
+}
+
+.moving {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 100ms, opacity 100ms;
+}

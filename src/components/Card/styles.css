@@ -1,0 +1,110 @@
+.card {
+  display: inline-block;
+  width: 90vw;
+  max-width: 400px;
+  height: 75vh;
+  background: #FFFFFF;
+  border-radius: 8px;
+  overflow: hidden;
+  position: absolute;
+  will-change: transform;
+  transition: all 0.3s ease-in-out;
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: grab;
+  user-select: none;
+  box-shadow:
+    0 5px 2px rgba(0, 0, 0, 0.034),
+    0 5px 2px rgba(0, 0, 0, 0.048),
+    0 5px 2px rgba(0, 0, 0, 0.06),
+    0 5px 2px rgba(0, 0, 0, 0.072),
+    0 20px 20px rgba(0, 0, 0, 0.086),
+    0 5px 2px rgba(0, 0, 0, 0.12)
+  ;
+}
+
+.card--inactive {
+  filter: blur(2px);
+}
+
+.card--img {
+  pointer-events: none;
+}
+
+.img--inactive{
+  filter: blur(2px);
+}
+
+.card--info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card--title {
+  font-size: 1.5rem;
+  color: #333333;
+  margin-left: 1.15rem;
+  margin-right: 0.1rem;
+  margin-bottom: 0rem;
+}
+
+.card--job-and-city {
+  display: flex;
+  justify-content: stretch;
+  flex-direction: column;
+}
+
+.card-job-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-city-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-job-container {
+  margin-top: -2.2rem;
+}
+
+.card--jobIcon {
+  margin-top: 1.15rem;
+  margin-left: 1rem;
+  margin-right: 0.2rem;
+}
+
+.card--jobTitle {
+  font-size: 0.95rem;
+  margin-left: 0rem;
+  color: #4a4a4a;
+}
+
+.card--emoji {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  padding-right: 0.5rem;
+}
+
+.card--passions {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card--passion {
+  color: white;
+  background-color: #b0b0b0;
+  padding: 0.4rem 0.5rem 0.4rem 0.5rem;
+  border-radius: 1rem;
+  margin-right: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.card--bio {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: start;
+}
