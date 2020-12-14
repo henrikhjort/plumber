@@ -20,9 +20,6 @@ const Card = ({ card, z, inactive, handleSwipe }) => {
   };
 
   const handleMoveStart = (event) => {
-    // Hide card.
-    //event.target.className = event.target.className + " moving";
-
     // Create clone of top card.
     let movingCardElement = document.getElementsByClassName("card")[0];
     let clone = document.createElement("div");
@@ -37,7 +34,6 @@ const Card = ({ card, z, inactive, handleSwipe }) => {
 
     // Add hidden clone to dom.
     document.getElementById("cards").appendChild(clone);
-    //event.target.style.visibility = "hidden";
   };
 
   const handleMove = (event) => {
@@ -93,6 +89,9 @@ const Card = ({ card, z, inactive, handleSwipe }) => {
       onDrag={handleMove}
       onDragEnd={handleMoveEnd}
     >
+      <h1 className="card--love-text" id="card--love-text">
+        LIKE
+      </h1>
       {card && (
         <img
           className={

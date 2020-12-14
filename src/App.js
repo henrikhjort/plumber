@@ -13,8 +13,6 @@ import "./App.css";
 const App = () => {
   const [card, setCard] = useState(null);
   const [cards, setCards] = useState([]);
-  const [startX, setStartX] = useState(null);
-  const [startY, setStartY] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
   const [match, setMatch] = useState(null);
 
@@ -86,7 +84,7 @@ const App = () => {
   };
 
   const checkMatch = (card) => {
-    const match = Math.random() < 0.1;
+    const match = Math.random() < 0.10;
     if (match) {
       setMatch(card);
       setModalVisible(true);

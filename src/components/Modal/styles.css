@@ -79,13 +79,13 @@
   justify-content: center;
   align-items: center;
   margin: 1rem;
-  width: 10rem;
-  height: 3rem;
+  padding: 1rem;
   border-radius: 0.75rem;
 }
 
 .message {
   background-color: #FE3C72;
+  overflow-wrap: break-word;
 }
 
 .message:hover {
