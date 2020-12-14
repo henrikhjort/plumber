@@ -12,28 +12,12 @@ body,
 #app,
 #app > div {
   height: 100%;
-  /*background-image: linear-gradient(#ffa3bb, #ffedf1);*/
   background: linear-gradient(45deg, #f5898d, #a1ffe4, #c077ed);
-  /*background: linear-gradient(45deg, #8e67a6, #6c5fde, #5f9dd4, #5fd4b1, #5fd47a);*/
 	background-size: 400% 400%;
-	animation: linear-gradient 60s linear infinite;
   overflow: hidden;
 }
-
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-@keyframes linear-gradient {
-	0% {
-		background-position: 0% 50%;
-  }
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
 }

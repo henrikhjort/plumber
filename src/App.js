@@ -14,6 +14,7 @@ const App = () => {
   const [card, setCard] = useState(null);
   const [cards, setCards] = useState([]);
   const [startX, setStartX] = useState(null);
+  const [startY, setStartY] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
   const [match, setMatch] = useState(null);
 
@@ -31,26 +32,6 @@ const App = () => {
     };
     run();
   }, [cards]);
-
-  const handleMoveStart = (event) => {
-    event.target.className = event.target.className + " moving";
-    setStartX(event.clientX);
-  };
-
-  const handleMove = (event) => {};
-
-  const handleMoveEnd = (event) => {
-    event.target.classList.remove("moving");
-    const deltaX = startX - event.clientX;
-    if (deltaX < -250) {
-      handleSwipe(true);
-      return;
-    }
-    if (deltaX > 250) {
-      handleSwipe(false);
-      return;
-    }
-  };
 
   const createRandomCard = async (index) => {
     // Images are named 1.png, 2.png ... 1000.png.
@@ -127,7 +108,7 @@ const App = () => {
   return (
     <div className={`app ${blurApp(modalVisible)}`}>
       {modalVisible && <Modal card={match} onClose={handleModalClose} message={getRandomFromList(messages)}/>}
-      <div className="cards">
+      <div className="cards" id="cards">
         {cards.length > 0 &&
           cards.map((c, index) => {
             return (
@@ -136,9 +117,7 @@ const App = () => {
                 card={c}
                 z={cards.length - index + 1}
                 inactive={(c !== card) || modalVisible}
-                onMoveStart={handleMoveStart}
-                onMove={handleMove}
-                onMoveEnd={handleMoveEnd}
+                handleSwipe={handleSwipe}
               />
             );
           })}

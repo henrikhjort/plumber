@@ -12,6 +12,8 @@ const messages = [
   "Meet me at the pit",
   "Got rash?",
   "I'm dying",
+  "Slime and chill?",
+  "Graveyard and chill?",
 ];
 
 export default messages;

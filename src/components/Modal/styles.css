@@ -44,10 +44,12 @@
   font-family: 'Dancing Script', cursive;
   font-size: 60px;
   color: white;
+  opacity: 1 !important;
 }
 
 .modal--text {
   color: white;
+  opacity: 1 !important;
 }
 
 .modal--image {
@@ -56,6 +58,7 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
+  opacity: 1 !important;
 }
 
 @keyframes bounce {
@@ -68,6 +71,7 @@
   display: flex;
   flex-direction: row;
   color: white;
+  opacity: 1 !important;
 }
 
 .modal--actions--button {
@@ -81,16 +85,16 @@
 }
 
 .message {
-  background-color: #e05c80;
+  background-color: #FE3C72;
 }
 
 .message:hover {
   cursor: pointer;
-  background: #FE3C72;
+  background: #bf2e56;
 }
 
 .message-sent {
-  background: #FE3C72;
+  background: #bf2e56;
 }
 
 .continue {
