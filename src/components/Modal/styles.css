@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  animation: fadeIn ease 1s;
+  z-index: 999;
+  background-color: #3a3d42;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -20rem;
+  margin-left: -15rem;
+  width: 30rem;
+  height: 40rem;
+  filter: none !important;
+  opacity: 0.9;
+  border-radius: 5%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:0.9;}
+}
+
+.modal--fade-out {
+  animation: fadeOut ease 1s;
+}
+
+@keyframes fadeOut {
+  0% {opacity:0.9;}
+  100% {opacity:0;}
+}
+
+.modal--title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 60px;
+  color: white;
+}
+
+.modal--text {
+  color: white;
+}
+
+.modal--image {
+  animation: bounce 1s; 
+  animation-iteration-count: 2;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0px)  }
+  50% { transform: translateY(-20px) }
+  100% { transform: translateY(0px) }
+}
+
+.modal--actions {
+  display: flex;
+  flex-direction: row;
+  color: white;
+}
+
+.modal--actions--button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  width: 10rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+}
+
+.message {
+  background-color: #e05c80;
+}
+
+.message:hover {
+  cursor: pointer;
+  background: #FE3C72;
+}
+
+.message-sent {
+  background: #FE3C72;
+}
+
+.continue {
+  background-color: #363636;
+}
+
+.continue:hover {
+  cursor: pointer;
+  background-color: #1f1f1f;
+}
+
+.prevent-events {
+  pointer-events: none;
+}

@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from "react";
 import _ from "lodash";
 import Card from "./components/Card/Card";
+import Modal from "./components/Modal/Modal";
 import passions from "./data/passions";
 import names from "./data/names";
 import jobs from "./data/jobs";
 import employers from "./data/employers";
 import cities from "./data/cities";
+import messages from "./data/messages";
 import "./App.css";
 
 const App = () => {
   const [card, setCard] = useState(null);
   const [cards, setCards] = useState([]);
-  const [cardIsMoving, setCardIsMoving] = useState(false);
   const [startX, setStartX] = useState(null);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [match, setMatch] = useState(null);
 
   useEffect(() => {
     const run = async () => {
@@ -32,7 +35,6 @@ const App = () => {
   const handleMoveStart = (event) => {
     event.target.className = event.target.className + " moving";
     setStartX(event.clientX);
-    setCardIsMoving(true);
   };
 
   const handleMove = (event) => {};
@@ -40,7 +42,6 @@ const App = () => {
   const handleMoveEnd = (event) => {
     event.target.classList.remove("moving");
     const deltaX = startX - event.clientX;
-    setCardIsMoving(false);
     if (deltaX < -250) {
       handleSwipe(true);
       return;
@@ -92,10 +93,11 @@ const App = () => {
   };
 
   const handleSwipe = async (swipeRight) => {
-    let body = document.getElementById("body");
     if (swipeRight) {
+      checkMatch();
     } else {
     }
+    setMatch(card);
     const newList = cards.slice(1);
     const newCard = await createRandomCard();
     newList.push(newCard);
@@ -103,8 +105,28 @@ const App = () => {
     setCards(newList);
   };
 
+  const checkMatch = () => {
+    const match = Math.random() < 0.1;
+    if (match) {
+      setModalVisible(true);
+    }
+  }
+
+  const blurApp = (modalVisible) => {
+    return modalVisible ? " app-blur" : "";
+  }
+
+  const disablePointerEvents = (modalVisible) => {
+    return modalVisible ? " disable-pointer-events" : "";
+  }
+
+  const handleModalClose = () => {
+    setModalVisible(false);
+  }
+
   return (
-    <div className="app">
+    <div className={`app ${blurApp(modalVisible)}`}>
+      {modalVisible && <Modal card={match} onClose={handleModalClose} message={getRandomFromList(messages)}/>}
       <div className="cards">
         {cards.length > 0 &&
           cards.map((c, index) => {
@@ -113,14 +135,14 @@ const App = () => {
                 key={index}
                 card={c}
                 z={cards.length - index + 1}
-                inactive={c !== card}
+                inactive={(c !== card) || modalVisible}
                 onMoveStart={handleMoveStart}
                 onMove={handleMove}
                 onMoveEnd={handleMoveEnd}
               />
             );
           })}
-        <div className="buttons">
+        <div className={`buttons ${disablePointerEvents(modalVisible)}`}>
           <div
             id="nope"
             className="button nope"

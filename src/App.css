@@ -10,6 +10,10 @@
   transition: opacity 0.1s ease-in-out;
 }
 
+.app-blur>* {
+  filter: blur(10px);
+}
+
 .moving {
   box-shadow: none;
   transition: none;
@@ -35,6 +39,10 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
 }
 
 .button {
@@ -114,4 +122,8 @@
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s linear 100ms, opacity 100ms;
+}
+
+.disable-pointer-events {
+  pointer-events: none;
 }
