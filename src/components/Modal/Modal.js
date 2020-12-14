@@ -12,7 +12,7 @@ const Modal = ({ card, onClose, message }) => {
     modal.classList.add("modal--fade-out");
     setTimeout(() => {
       onClose();
-    }, 1000);
+    }, 800);
   }
 
   const preventEvents = (closed) => {

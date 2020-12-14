@@ -9,6 +9,9 @@ const messages = [
   "Puke on me",
   "I want to die",
   "Kill me",
+  "Meet me at the pit",
+  "Got rash?",
+  "I'm dying",
 ];
 
 export default messages;

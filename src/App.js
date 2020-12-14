@@ -94,10 +94,9 @@ const App = () => {
 
   const handleSwipe = async (swipeRight) => {
     if (swipeRight) {
-      checkMatch();
+      checkMatch(card);
     } else {
     }
-    setMatch(card);
     const newList = cards.slice(1);
     const newCard = await createRandomCard();
     newList.push(newCard);
@@ -105,9 +104,10 @@ const App = () => {
     setCards(newList);
   };
 
-  const checkMatch = () => {
+  const checkMatch = (card) => {
     const match = Math.random() < 0.1;
     if (match) {
+      setMatch(card);
       setModalVisible(true);
     }
   }
