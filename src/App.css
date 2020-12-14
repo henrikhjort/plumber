@@ -2,6 +2,7 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  flex-wrap: wrap;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -10,6 +11,7 @@
 }
 
 .moving {
+  box-shadow: none;
   transition: none;
   cursor: -webkit-grabbing;
   cursor: -moz-grabbing;
@@ -27,6 +29,7 @@
 }
 
 .buttons {
+  flex-grow: 1;
   padding-bottom: 2rem;
   display: flex;
   flex-direction: row;
@@ -43,33 +46,69 @@
   border-radius: 50%;
 }
 
+.button:hover {
+  cursor: pointer;
+}
+
 .nope {
-  background-color:#b46d6a;
-  box-shadow: 0 2px 2px 3px #755251;
+  display: flex;
+  background-color:#c44c47;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 0px 0px #ad4945;
+}
+
+.nopeX {
+  color: white;
+  font-weight: bold;
 }
 
 .nope:active {
-  background-color: #9c5e5c;
-  box-shadow: 0 0 0 0 #755251;
+  background-color: #ad4945;
 }
-
-.nope:hover {
-}
-
 
 .love {
-  background-color: #46e6be;
-  box-shadow: 0 3px 2px 3px #3d9982;
+  background-color: #2fba87;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 0px 0px #3d9982;
+}
+
+.heart {
+  margin-top: 0.5rem;
+  background-color: white;
+  display: inline-block;
+  height: 20px;
+  position: relative;
+  transform: rotate(-45deg);
+  width: 20px;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  background-color: white;
+  border-radius: 50%;
+  height: 20px;
+  position: absolute;
+  width: 20px;
+}
+
+.heart:before {
+  top: -10px;
+  left: 0;
+}
+
+.heart:after {
+  left: 10px;
+  top: 0;
 }
 
 .love:active {
-  background-color: #39c4a1;
-  box-shadow: 0 0 0 0 #3d9982;
+  background-color: #26967a;
 }
 
-.love:hover {
-
-}
 
 .moving {
   visibility: hidden;

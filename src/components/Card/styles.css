@@ -2,7 +2,7 @@
   display: inline-block;
   width: 90vw;
   max-width: 400px;
-  height: 75vh;
+  height: 72vh;
   background: #FFFFFF;
   border-radius: 8px;
   overflow: hidden;
@@ -84,11 +84,12 @@
 .card--emoji {
   margin-top: 1rem;
   margin-left: 1rem;
-  padding-right: 0.5rem;
+  padding-right: 0.2rem;
 }
 
 .card--passions {
-  padding: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

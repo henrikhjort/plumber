@@ -13,7 +13,7 @@ const Card = ({ card, z, inactive, onMoveStart, onMove, onMoveEnd }) => {
   };
 
   const setInactiveClass = (inactive) => {
-    return inactive ? " card--inactive" : "";
+    return inactive ? " card--inactive" : " card--active";
   };
 
   return (
@@ -27,12 +27,14 @@ const Card = ({ card, z, inactive, onMoveStart, onMove, onMoveEnd }) => {
     >
       {card && (
         <img
-          className={"card--img " + (inactive ? "img--inactive" : "img--active")}
+          className={
+            "card--img " + (inactive ? "img--inactive" : "img--active")
+          }
           width="100%"
           height={"300"}
           alt="profile"
           src={`/images/${card.imgId}.png`}
-          style={{filter: `hue-rotate(${card.tint}deg)`}}
+          style={{ filter: `hue-rotate(${card.tint}deg)` }}
         ></img>
       )}
       <div className="card--info">
@@ -41,13 +43,16 @@ const Card = ({ card, z, inactive, onMoveStart, onMove, onMoveEnd }) => {
         </h3>
         <div className="card--job-and-city">
           <div className="card-city-container">
-              <span className="card--emoji">📍</span>
-              <h4 className="card--jobTitle">
-                {card.city}
-              </h4>
-            </div>
+            <span className="card--emoji">📍</span>
+            <h4 className="card--jobTitle">{card.city}</h4>
+          </div>
           <div className="card-job-container">
-            <img className="card--jobIcon" src={jobIcon} width="20" height="20" />
+            <img
+              className="card--jobIcon"
+              src={jobIcon}
+              width="20"
+              height="20"
+            />
             <h4 className="card--jobTitle">
               {card.job && card.employer
                 ? card.job + " at " + card.employer
@@ -68,7 +73,7 @@ const Card = ({ card, z, inactive, onMoveStart, onMove, onMoveEnd }) => {
       <div className="card--bio">
         <p>
           {card.bio ||
-            "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum111"}
+            "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum111Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum111"}
         </p>
       </div>
     </div>

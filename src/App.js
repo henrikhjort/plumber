@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import _ from "lodash";
 import Card from "./components/Card/Card";
 import passions from "./data/passions";
 import names from "./data/names";
@@ -34,9 +35,7 @@ const App = () => {
     setCardIsMoving(true);
   };
 
-  const handleMove = (event) => {
-
-  };
+  const handleMove = (event) => {};
 
   const handleMoveEnd = (event) => {
     event.target.classList.remove("moving");
@@ -61,7 +60,7 @@ const App = () => {
     const newCard = {
       imgId: imgId,
       tint: imgTint,
-      contrast: (Math.random() * (1.00 - 4.00) + 4.00).toFixed(3),
+      contrast: (Math.random() * (1.0 - 4.0) + 4.0).toFixed(3),
       name: getRandomFromList(names),
       age: Math.floor(Math.random() * (33 - 18 + 1) + 18),
       passions: getNRandomFromList(numberOfPassions, passions),
@@ -93,6 +92,7 @@ const App = () => {
   };
 
   const handleSwipe = async (swipeRight) => {
+    let body = document.getElementById("body");
     if (swipeRight) {
     } else {
     }
@@ -125,12 +125,15 @@ const App = () => {
             id="nope"
             className="button nope"
             onClick={() => handleSwipe(false)}
-          ></div>
+          >
+            <h2 className="nopeX">X</h2>
+          </div>
           <div
             id="love"
             className="button love"
             onClick={() => handleSwipe(true)}
           >
+            <div className="heart" />
           </div>
         </div>
       </div>

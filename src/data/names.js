@@ -79,7 +79,6 @@ const names = [
   "Droop",
   "Purp",
   "Dagon",
-  "كابوس",
   "EE88",
   "X1003",
   "Null",
