@@ -27,6 +27,7 @@ const Card = ({ card, z, inactive, handleSwipe }) => {
     clone.style.cssText = document.defaultView.getComputedStyle(movingCardElement, "").cssText;
     clone.id = "clone";
     clone.style.visibility = "hidden";
+    clone.style.cursor = "pointer";
 
     // Set drag event starting point.
     setStartX(event.clientX);
