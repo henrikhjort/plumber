@@ -12,8 +12,10 @@ body,
 #app,
 #app > div {
   height: 100%;
-  background: linear-gradient(45deg, #f5898d, #a1ffe4, #c077ed);
-	background-size: 400% 400%;
+  background: #73C8A9;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #373B44, #73C8A9);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #373B44, #73C8A9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background-size: 250%;
   overflow: hidden;
 }
 

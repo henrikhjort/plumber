@@ -1,6 +1,5 @@
 const messages = [
   "DTF?",
-  "Do you like cum?",
   "Got sludge?",
   "Touch me",
   "I love you",
@@ -28,7 +27,6 @@ const messages = [
   "eeeeee888888",
   "I'm HIV positive",
   "Need AIDS?",
-  "Bukkake & chill?",
   "Where's the best rat kebab in town?",
   "Ur literally my cutest match",
   "Take me somewhere",

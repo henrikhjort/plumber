@@ -26,7 +26,7 @@ const Card = ({ card, z, inactive, handleSwipe }) => {
     clone.innerHTML = movingCardElement.innerHTML;
     clone.style.cssText = document.defaultView.getComputedStyle(movingCardElement, "").cssText;
     clone.id = "clone";
-    clone.style.visibility = "hidden";
+    clone.style.zIndex = parseInt(movingCardElement.style.zIndex) - 1;
     clone.style.cursor = "pointer";
 
     // Set drag event starting point.
@@ -38,17 +38,17 @@ const Card = ({ card, z, inactive, handleSwipe }) => {
   };
 
   const handleMove = (event) => {
+    // Hide card so that the second card in stack shows when dragging.
     event.target.style.visibility = "hidden";
+
     let clone = document.getElementById("clone");
     let rectangle = event.target.getBoundingClientRect();
-    // Dirty math.
-    // Dx.
+
     const offsetX = rectangle.left;
     const w = event.target.offsetWidth;
     const a = (offsetX + w) - startX;
     const dx = w - a;
 
-    // Dy.
     const offsetY = rectangle.top;
     const h = event.target.offsetHeight;
     const b = (offsetY + h) - startY;
@@ -67,6 +67,7 @@ const Card = ({ card, z, inactive, handleSwipe }) => {
 
   const handleMoveEnd = (event) => {
     event.target.style.visibility = "visible";
+
     let clone = document.getElementById("clone");
     document.getElementById("cards").removeChild(clone);
     const deltaX = startX - event.clientX;

@@ -3,7 +3,6 @@ const passions = [
   "Toothpaste",
   "Smoking",
   "Slime",
-  "Cum",
   "Depression",
   "Anxiety",
   "Bowling",
@@ -41,6 +40,9 @@ const passions = [
   "Amputation",
   "Radiation",
   "Frogs",
+  "Insect Play",
+  "Batteries",
+  "Bones",
 ];
 
 export default passions;
