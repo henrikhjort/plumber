@@ -33,7 +33,7 @@ const App = () => {
 
   const createRandomCard = async (index) => {
     // Images are named 1.png, 2.png ... 1000.png.
-    const imgId = Math.floor(Math.random() * 1000) + 1;
+    const imgId = Math.floor(Math.random() * 5003) + 1;
     const imgTint = Math.floor(Math.random() * 360) + 1;
     const numberOfPassions = getRandomFromList([2, 3, 4, 5]);
     const job = Math.random() > 0.15 ? getRandomFromList(jobs) : "";
